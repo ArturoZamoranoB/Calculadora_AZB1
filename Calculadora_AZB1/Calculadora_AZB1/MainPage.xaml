@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora_AZB1.MainPage">
+
+    <StackLayout BackgroundColor="Black">
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Calculadora" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Entry x:Name="display" Text="" IsReadOnly="True"   HorizontalTextAlignment="End" VerticalTextAlignment="End" FontSize="40" TextColor="White"  VerticalOptions="StartAndExpand" HorizontalOptions="Center" WidthRequest="600" HeightRequest="430" BackgroundColor="Black" />
+
+
+
+        <StackLayout BackgroundColor="Black">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="1" Grid.Column="0" Text="C" Clicked="OnClearClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="Red"/>
+                <Button Grid.Row="1" Grid.Column="1"          Clicked="OnBackspaceClicked"  FontSize="15" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="#40FF00" ImageSource="https://i.ibb.co/8r9hzXY/delete-1.png"/>
+                <Button Grid.Row="1" Grid.Column="2" Text="%" Clicked="OnPercentageClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="#40FF00" />
+                <Button Grid.Row="1" Grid.Column="3" Text="/" Clicked="OnOperatorClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="#40FF00"/>
+
+                <Button Grid.Row="2" Grid.Column="0" Text="7" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="2" Grid.Column="1" Text="8" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="2" Grid.Column="2" Text="9" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" />
+                <Button Grid.Row="2" Grid.Column="3" Text="*" Clicked="OnOperatorClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="#40FF00"/>
+
+                <Button Grid.Row="3" Grid.Column="0" Text="4" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="3" Grid.Column="1" Text="5" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="3" Grid.Column="2" Text="6" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="3" Grid.Column="3" Text="-" Clicked="OnOperatorClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="#40FF00"/>
+
+                <Button Grid.Row="4" Grid.Column="0" Text="1" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="4" Grid.Column="1" Text="2" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="4" Grid.Column="2" Text="3" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="4" Grid.Column="3" Text="+" Clicked="OnOperatorClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="#40FF00"/>
+
+                <Button Grid.Row="5" Grid.Column="0" Text="+/-" Clicked="OnNegateClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" TextColor="White"/>
+                <Button Grid.Row="5" Grid.Column="1" Text="0" Clicked="OnNumberClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="5" Grid.Column="2" Text="." Clicked="OnDecimalClicked" FontSize="30" BackgroundColor="#151515" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119"/>
+                <Button Grid.Row="5" Grid.Column="3" Text="=" Clicked="OnCalculateClicked" FontSize="44" BackgroundColor="#40FF00" CornerRadius="79" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="119" WidthRequest="119" />
+
+
+            </Grid>
+
+
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
